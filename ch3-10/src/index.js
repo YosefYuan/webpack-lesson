@@ -1,1 +1,1 @@
-condsole.log("hello");
+console.log("hello 666 yosef yuan !!!");
