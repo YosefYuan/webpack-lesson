@@ -3,19 +3,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {
     CleanWebpackPlugin
 } = require('clean-webpack-plugin');
-const webpack = require('webpack');
 module.exports = {
-    mode: 'development',
-    devtool: 'cheap-module-inline-source-map',
     entry: {
         main: './src/index.js',
-    },
-    devServer: {
-        contentBase: './dist',
-        open: true,
-        port: 8090,
-        hot: true,
-        hotOnly: true
     },
     module: {
         rules: [{
@@ -53,11 +43,11 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: 'src/index.html'
-        }), new CleanWebpackPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
+        }),
+        new CleanWebpackPlugin()
     ],
     output: {
         filename: '[name].js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, '../dist')
     }
 }
