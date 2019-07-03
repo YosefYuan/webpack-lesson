@@ -1,12 +1,3 @@
-import "@babel/polyfill";
+import _ from 'lodash';
 
-import React, { Component } from "react";
-import ReactDom from "react-dom";
-
-class App extends Component {
-  render() {
-    return <div>Hello World </div>;
-  }
-}
-
-ReactDom.render(<App />, document.getElementById("root"));
+console.log(_.join(['d', 'd', 'cs'], '---'));
