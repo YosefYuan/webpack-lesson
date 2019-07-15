@@ -36,7 +36,8 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
         new webpack.ProvidePlugin({
-            '$': 'jquery'
+            '$': 'jquery',
+            '_join': ['lodash', 'join'],
         })
     ],
     optimization: {
