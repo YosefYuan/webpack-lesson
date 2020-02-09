@@ -4,7 +4,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   mode: 'development',
   entry: {
-    main: './src/index.js' // 可以简写
+    main: './src/index.js', // 可以简写
+    sub: './src/index.js'
   },
   module: {
     rules: [
@@ -44,7 +45,7 @@ module.exports = {
     new CleanWebpackPlugin()
   ],
   output: {
-    filename: 'bundle.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
   }
 };
