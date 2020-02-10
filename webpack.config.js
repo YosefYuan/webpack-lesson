@@ -9,6 +9,14 @@ module.exports = {
   entry: {
     main: './src/index.js'
   },
+  devServer: {
+    contentBase: './dist',
+    open: true,
+    proxy: {
+      '/api': 'http://localhost:3000'
+    },
+    port: 8080
+  },
   module: {
     rules: [
       {
