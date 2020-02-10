@@ -3,9 +3,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   mode: 'development',
+  // devtool: 'cheap-module-eval-source-map', //development
+  // devtool: 'cheap-module-source-map', // production
+  devtool: 'cheap-module-source-map',
   entry: {
-    main: './src/index.js', // 可以简写
-    sub: './src/index.js'
+    main: './src/index.js'
   },
   module: {
     rules: [
@@ -45,7 +47,6 @@ module.exports = {
     new CleanWebpackPlugin()
   ],
   output: {
-    publicPath: 'www.cdn.com',
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
   }
